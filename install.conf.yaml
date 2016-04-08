@@ -5,5 +5,17 @@
     ~/.bash_profile: bash_profile
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
+    ~/.gvimrc: gvimrc
+    ~/.janus: janus
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.vimrc.after: vimrcafter
+    ~/.vimrc.before: vimrcbefore
+    ~/.xvimrc: xvimrc
+
+- defaults:
+  link:
+    relink: true
+
 
 
