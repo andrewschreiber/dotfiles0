@@ -1,0 +1,101 @@
+set ignorecase
+set smartcase
+
+noremap Y 0y$dd
+imap jk <Esc>
+map <C-f> i
+map <Enter> o<Esc>
+map <S-Enter> O<Esc>
+noremap z 0v$%
+imap ` <Esc>
+map [ }
+map ] {
+vremap <Enter> <Esc>o
+vremap <S-Enter> <Esc>O
+
+no status bar
+set laststatus=0
+
+" proper search
+set incsearch
+set wrap
+set wrapscan
+set gdefault
+"
+" no bells
+set noerrorbells
+
+" use system pasteboard
+set pasteboard
+
+" move between assistant editors
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+" quick open
+nnoremap <C-p> :xccmd openQuickly<cr>
+
+" navigator
+nnoremap <C-n> :xccmd toggleNavigatorsVisibility<cr>
+"
+" comments
+nnoremap gcc :xccmd commentAndUncommentCurrentLines<cr>
+vnoremap gc  :xccmd commentAndUncommentCurrentLines<cr>
+
+" jump to issues
+nmap ;e :xcmenucmd Jump to Next Issue<cr>
+nmap ;E :xcmenucmd Jump to Previous Issue<cr>
+"
+" make
+nmap ;m :xmenucmd Run<cr>
+"
+" quicker indentation
+nnoremap > >>
+nnoremap < <<
+"
+" " dont loose selection on indenting
+vnoremap > >gv
+vnoremap < <gv
+"
+" " dot works in visual selection mode!
+vnoremap . :norm.<cr>
+"
+" " D deletes to the end of the line
+ nnoremap D d$
+"
+" " Y yanks to the end of the line
+nnoremap Y y$
+"
+" " better line begin (H) and end (L)
+noremap H ^
+noremap L $
+vnoremap L g_
+"
+" apply macros with Q
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+"
+" " better %
+map <tab> %
+"
+" " new tab
+nnoremap ;T :xccmd newTab<cr>
+nnoremap gT :xccmd selectPreviousTab<cr>
+nnoremap gt :xccmd selectNextTab<cr>
+
+" " fold
+nnoremap zc :xccmd fold<cr>
+nnoremap zo :xccmd unfold<cr>
+
+" remove whitespace
+command! KillWhitespace :normal :%s/\s\+$//g<cr>
+nnoremap <silent> ;k :KillWhitespace<cr>:nohlsearch<cr>
+"
+" " select whole buffer
+nnoremap ;va ggVG
+"
+" " yank whole buffer
+nnoremap ;ya :let yank_view=winsaveview()<cr>ggyG<cr>:call
+winrestview(yank_view)<cr>
