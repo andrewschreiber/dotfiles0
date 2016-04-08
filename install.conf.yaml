@@ -13,9 +13,3 @@
     ~/.vimrc.before: vimrcbefore
     ~/.xvimrc: xvimrc
 
-- defaults:
-  link:
-    relink: true
-
-
-
