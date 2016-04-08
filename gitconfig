@@ -1,0 +1,27 @@
+[user]
+	name = andrewschreiber
+	email = andrew.schrieber1@gmail.com
+[credential]
+	helper = osxkeychain
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[push]
+	default = simple
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	cm = commit -a -m
+	ph = push origin HEAD
+	di = diff HEAD^ HEAD
+	alias = config --get-regexp alias
+	bs = checkout MainApplication.storyboard
+[color]
+	ui = auto
+	status = auto
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
